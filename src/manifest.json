@@ -1,0 +1,24 @@
+{
+  "name": "Jojo小书店",
+  "appid": "",
+  "description": "Jojo小书店移动端小程序（买书系统）",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "vueVersion": "3",
+  "h5": {
+    "title": "Jojo小书店",
+    "router": {
+      "mode": "hash",
+      "base": "./"
+    }
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true
+  }
+}

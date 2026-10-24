@@ -1,0 +1,236 @@
+/* ============================================
+   Jojo书城 小程序全局样式
+   主题色：书卷红 #b03a2e（与 H5 端一致）
+   ============================================ */
+
+page {
+  --bs-primary: #b03a2e;
+  --bs-primary-dark: #7b241c;
+  --bs-page-bg: #f7f6f3;
+  --bs-text-main: #323233;
+  --bs-text-sub: #969799;
+  --bs-radius: 20rpx;
+
+  background: var(--bs-page-bg);
+  color: var(--bs-text-main);
+  font-size: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+view,
+text,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+/* 通用页面容器 */
+.page {
+  min-height: 100vh;
+  background: var(--bs-page-bg);
+}
+
+/* 通用卡片 */
+.bs-card {
+  background: #fff;
+  border-radius: var(--bs-radius);
+  padding: 24rpx;
+  margin: 20rpx 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+/* 价格 */
+.price {
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+/* 文本截断 */
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 图书两列网格（flex 实现，兼容性优于 grid） */
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  padding: 20rpx 24rpx;
+}
+
+.book-grid .grid-item {
+  width: calc(50% - 10rpx);
+}
+
+/* 区块标题行 */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 28rpx 8rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.section-title .more {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: var(--bs-text-sub);
+}
+
+/* 主按钮 */
+.btn-primary {
+  background: var(--bs-primary);
+  color: #fff;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.btn-primary.btn-loading,
+.btn-primary.btn-disabled {
+  opacity: 0.6;
+}
+
+.btn-plain {
+  background: #fff;
+  color: var(--bs-primary);
+  border: 2rpx solid var(--bs-primary);
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  line-height: 76rpx;
+  text-align: center;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 0 28rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #dcdee0;
+  color: var(--bs-text-main);
+  background: #fff;
+}
+
+.btn-small.primary {
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.btn-small.danger {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+/* 底部固定操作条 */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.06);
+  padding: 16rpx 24rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  z-index: 100;
+}
+
+.bottom-bar-holder {
+  height: calc(120rpx + env(safe-area-inset-bottom));
+}
+
+/* 空状态 */
+.empty-state {
+  padding: 160rpx 0;
+  text-align: center;
+  color: var(--bs-text-sub);
+}
+
+.empty-state .empty-icon {
+  font-size: 96rpx;
+  display: block;
+  margin-bottom: 24rpx;
+  opacity: 0.5;
+}
+
+.empty-state .empty-text {
+  font-size: 28rpx;
+  margin-bottom: 32rpx;
+}
+
+.empty-state .empty-btn {
+  display: inline-block;
+  padding: 0 60rpx;
+  line-height: 72rpx;
+  border-radius: 36rpx;
+  background: var(--bs-primary);
+  color: #fff;
+  font-size: 28rpx;
+}
+
+/* 加载状态 */
+.loading-tip,
+.finished-tip {
+  text-align: center;
+  font-size: 24rpx;
+  color: var(--bs-text-sub);
+  padding: 24rpx 0;
+}
+
+/* 订单状态色 */
+.tag-status-0 { color: #e67e22; }
+.tag-status-1 { color: #3f6fa8; }
+.tag-status-2 { color: #16a085; }
+.tag-status-3 { color: #3d8f5f; }
+.tag-status-4 { color: #969799; }
+.tag-status-5 { color: #c0392b; }
+.tag-status-6 { color: #969799; }
+
+/* cell 行 */
+.cell-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 2rpx solid #f5f5f5;
+  font-size: 28rpx;
+}
+
+.cell-row:last-child {
+  border-bottom: none;
+}
+
+.cell-row .cell-label {
+  color: var(--bs-text-main);
+  flex-shrink: 0;
+}
+
+.cell-row .cell-value {
+  color: var(--bs-text-sub);
+  text-align: right;
+  word-break: break-all;
+}
+
+.cell-row.link .cell-arrow {
+  color: #c8c9cc;
+  margin-left: 8rpx;
+}
